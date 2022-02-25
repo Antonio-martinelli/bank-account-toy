@@ -29,17 +29,20 @@ Tests have been omitted and resolved using a strong exception handling, consider
 ## Endpoints
 
 - PUT "/deposit" : for the deposit (Use case 1)
+
 Body constraints: ```
 {"iban":"DE34857274830271880419",
 "amount":400}
 ```
 - POST "/transactions" : to implement the transfer (Use case 2)
+
 Body constraints: ```
 {"sender":"DE34857274830271880419",
 "receiver":"DE34857243850271880415",
 "amount":400}
 ```
 - POST "/accounts/balance" : to retrieve balance of an account (Use case 3)
+
 Body constraints: ```
 {"iban": "DE34857274830271880416"
 }
@@ -47,11 +50,13 @@ Body constraints: ```
 - GET "/accountsByType/{type} : to filter accounts by account type (Use case 4)
 
 - POST "accounts/history" : to get the transaction history (Use case 5)
+
 Body constraints: ```
 {"iban": "DE34857274830271880416"
 }
 ```
 - POST "/lockAccount": to lock/unlock an account (Use case 6)
+
 Body constraints: ```
 {"iban": "DE34857274830271880419", 
  "lock": true
