@@ -29,6 +29,7 @@ Tests have been omitted and resolved using a strong exception handling, consider
 ## Endpoints
 
 - PUT "/deposit" : for the deposit (Use case 1)
+    
     Body constraints: 
     ```
     {"iban":"DE34857274830271880419",
