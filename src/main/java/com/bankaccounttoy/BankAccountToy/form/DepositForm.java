@@ -17,5 +17,10 @@ public class DepositForm {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+	
+	@Override
+	public String toString() {
+		return "IBAN=" + IBAN + ", amount=" + amount + "]";
+	}
 
 }
