@@ -72,4 +72,3 @@ Simply run the project through an IDE or from the terminal: ```./mvnw spring-boo
 
 ## Notes
 This project misses metrics/loggings tracing and proper configuration in order to be effectively executed in a production environment.
->>>>>>> recovery
