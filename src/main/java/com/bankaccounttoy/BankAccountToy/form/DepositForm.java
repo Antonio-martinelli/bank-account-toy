@@ -22,5 +22,4 @@ public class DepositForm {
 	public String toString() {
 		return "IBAN=" + IBAN + ", amount=" + amount + "]";
 	}
-
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import org.apache.logging.log4j.LogManager;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -54,7 +55,9 @@ public class TransactionController {
 			
 			transactionsAmount.increment(depositForm.getAmount());
 			
-			return response;
+			//return response;
+			return new ResponseEntity<BaseResponse>(
+					transactionService.deposit(depositForm), HttpStatus.OK);
 		} catch (InvalidAmountException e) {
 			return new ResponseEntity<BaseResponse>(
 					new InvalidAmountResponse(), HttpStatus.BAD_REQUEST);
@@ -76,7 +79,9 @@ public class TransactionController {
 			
 			transactionsAmount.increment(transactionForm.getAmount());
 			
-			return response;
+			//return response;
+			return new ResponseEntity<BaseResponse>(
+					transactionService.transferMoney(transactionForm), HttpStatus.OK);
 		} catch (InvalidTransactionException e) {
 			return new ResponseEntity<BaseResponse>(
 					new InvalidTransactionResponse(e.getMessage()), HttpStatus.FORBIDDEN);
